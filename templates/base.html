@@ -133,7 +133,7 @@
                             <h3>Subscribe to newsletter</h3>
                         </div>
                         <div class="input-group">
-                            <input type="email" id="email" class="form-control" placeholder="Your e-mail address here"
+                            <input type="email" id="myEmail" class="form-control" placeholder="Your e-mail address here"
                                    aria-label="Your e-mail address here">
                             <span class="input-group-btn">
                                 <button onclick="getEmail()" class="btn btn-secondary submit_btn" type="submit">Subscribe</button>
@@ -202,9 +202,7 @@
 
     gtag('config', 'UA-23581568-13');
     function getEmail(){
-        let inputElement = document.getElementById("email");
-        let email = inputElement.value;
-        console.log("Daxil etdiyiniz mətn: " + email + " dioasmdoasm");
+        let email = document.getElementById("myEmail").value;
         $.ajax({
             url: '/user/subscribe/',
             data: {email},

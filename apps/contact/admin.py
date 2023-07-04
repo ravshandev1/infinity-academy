@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Contact
 
-# Register your models here.
+
+@admin.register(Contact)
+class Admin(admin.ModelAdmin):
+    list_display = ['name', 'created_at']
+    list_filter = ['is_read']
