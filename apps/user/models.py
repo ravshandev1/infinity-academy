@@ -6,3 +6,16 @@ class Subscribe(models.Model):
 
     def __str__(self):
         return self.email
+
+
+class Team(models.Model):
+    name = models.CharField(max_length=250)
+    profession = models.CharField(max_length=250)
+    image = models.FileField(upload_to='team')
+    stata = models.CharField(max_length=250)
+    stata_description = models.TextField()
+
+    def __str__(self):
+        return self.name
+# class About(models.Model):
+
