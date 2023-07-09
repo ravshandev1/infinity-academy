@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import ContactForm
 from .models import Contact
+from user.models import Team
 
 
 def contact(request):
@@ -14,4 +15,8 @@ def contact(request):
 
 
 def about(request):
-    return render(request, 'about-us.html')
+    team = Team.objects.all()
+    ctx = {
+        'team': team
+    }
+    return render(request, 'about-us.html', ctx)

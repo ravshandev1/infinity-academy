@@ -17,5 +17,11 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
-# class About(models.Model):
 
+    class Meta:
+        verbose_name_plural = 'Team'
+        verbose_name = 'Team'
+
+
+class About(models.Model):
+    pass
